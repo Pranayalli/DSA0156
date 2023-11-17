@@ -1,0 +1,17 @@
+#include <iostream>
+int add(int a, int b) {
+    return a + b;
+}
+int subtract(int a, int b) {
+    return a - b;
+}
+int main() {
+    int (*operationPtr)(int, int);
+    operationPtr = add;
+    int resultAdd = operationPtr(5, 3);
+    std::cout << "Result of add function: " << resultAdd << std::endl;
+    operationPtr = subtract;
+    int resultSubtract = operationPtr(5, 3);
+    std::cout << "Result of subtract function: " << resultSubtract << std::endl;
+    return 0;
+}
